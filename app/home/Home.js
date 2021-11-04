@@ -14,8 +14,7 @@ import {
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Capsule from '../capsule/Capsule';
-
+import Rocket from "../rocket/Rocket";
 export default function Home() {
 
     return (
@@ -23,8 +22,8 @@ export default function Home() {
             <View style={styles.container}>
                 <Header />
                 <Switch>
-                    <Route path="/capsule">
-                        <Capsule />
+                    <Route path="/rocket">
+                        <Rocket />
                     </Route>
                     <Route path="/">
                         <Text >Home</Text>

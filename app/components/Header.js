@@ -13,7 +13,7 @@ export default function Header() {
             <Image style={styles.headerLogo} source={require('../assets/spacex.png')} />
             <View style={styles.menu}>
                 <Link to="/"> <Text style={styles.menuItem}>Home</Text></Link>
-                <Link to="/capsule"> <Text style={styles.menuItem}>Capsule</Text></Link>
+                <Link to="/rocket"> <Text style={styles.menuItem}>Rocket</Text></Link>
 
             </View>
         </View>
