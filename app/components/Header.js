@@ -14,7 +14,9 @@ export default function Header() {
             <View style={styles.menu}>
                 <Link to="/"> <Text style={styles.menuItem}>Home</Text></Link>
                 <Link to="/rocket"> <Text style={styles.menuItem}>Rocket</Text></Link>
-
+                <Link to="/engine"> <Text style={styles.menuItem}>Engine</Text></Link>
+                <Link to="/capsule"> <Text style={styles.menuItem}>Capsule</Text></Link>
+                <Link to="/roadster"> <Text style={styles.menuItem}>Roadster</Text></Link>
             </View>
         </View>
     )
@@ -37,14 +39,14 @@ const styles = StyleSheet.create({
         flex: 1,
         color: '#fff',
         flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'flex-end'
+        justifyContent: 'flex-end',
+        alignItems: 'center',
     },
     menuItem: {
         color: '#fff',
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        fontSize: 20,
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
+        fontSize: 16,
         textAlign: "center",
 
         width: 'fit-content',

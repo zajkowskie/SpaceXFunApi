@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection : 'row',
         color: '#fff',
-        margin: 20
+        // margin: 20
     },
 
     shadowProp: {
@@ -40,14 +40,14 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.37,
         shadowRadius: 7.49,
         elevation: 12,
-        width: 300,
+        maxWidth : 300,
         flexDirection : "column",
         backgroundColor : "#fff",
         paddingBottom : 10
     },
     rocketItemImage :{
         height : 200,
-        width : 300,
+        maxWidth : 300,
         backgroundColor: '#fff',
     },
     rocketItemText : {

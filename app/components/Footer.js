@@ -14,11 +14,15 @@ export default function Footer() {
 const styles = StyleSheet.create({
 
     footer: {
-        height: 30,
+        height: 50,
         display: 'flex',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
+        borderTopWidth: 1,
+        borderTopColor: '#fff',
+        marginLeft: 20,
+        marginRight: 20,
     },
     footerText: {
         color: '#fff',

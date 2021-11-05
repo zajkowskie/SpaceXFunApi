@@ -29,15 +29,16 @@ export default function Rocket() {
     }, [])
    
     const renderItem = (rocket) => {
-        return <RocketItem setSelectedRocket={setSelectedRocket} rocket={rocket.item} />
+        return      <View style={[styles.rocketCardListItem]}>
+                        <RocketItem setSelectedRocket={setSelectedRocket} rocket={rocket.item} />
+                    </View>
     }
     return (
         <ScrollView >
-            <View style={styles.scroled}>
-                {console.log(rocketData.length)}
+        <View style={styles.scroled}>
                 {rocketData.length != 0 ? (
                     selectedRocket && selectedRocket ? (
-                        <RocketDetails setSelectedRocket={setSelectedRocket} rocket={selectedRocket}/>
+                            <RocketDetails setSelectedRocket={setSelectedRocket} rocket={selectedRocket}/>
                     ) : (
                         <FlatList
                             data={rocketData}
@@ -50,8 +51,8 @@ export default function Rocket() {
                         <ActivityIndicator size="large" color="#ffffff" />
                     </View>
                 )}
-            </View>
-        </ScrollView>
+             </View>
+         </ScrollView>
     )
 }
 
@@ -63,11 +64,16 @@ const styles = StyleSheet.create({
     cardWrapper: {
         margin: 10
     },
+    rocketCardListItem : {
+        margin: 20
+    },
     scroled: {
+        flex: 1,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: "column",
+        flexDirection: "colurmn",
+
     }
 
 });
