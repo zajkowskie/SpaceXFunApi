@@ -7,28 +7,38 @@ import RocketItem from './RocketItem'
 
 export default function RocketDetails({ rocket, setSelectedRocket }) {
     const [selectedCard, setSelectedCard] = useState("dimensions");
-   
+
     return (
         <View style={[styles.rocketItem]}>
             <View style={[styles.rocketCard]}>
-                
+
                 <RocketItem setSelectedRocket={setSelectedRocket} rocket={rocket} />
                 <View style={styles.rocketCardDetails}>
                     <View style={[styles.rocketCardMenu]}>
-                        <TouchableOpacity onPress={()=>setSelectedCard('dimensions')} >
-                            <Text style={(selectedCard == 'dimensions')?[styles.rocketCardMenuItem,styles.rocketCardMenuItemActive] : styles.rocketCardMenuItem} >Dimensions</Text>
+                        <TouchableOpacity onPress={() => setSelectedCard('dimensions')} >
+                            <Text style={(selectedCard == 'dimensions') ? [styles.rocketCardMenuItem, styles.rocketCardMenuItemActive] : styles.rocketCardMenuItem} >Dimensions</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={()=>setSelectedCard("first_stage")}>
-                            <Text style={(selectedCard == 'first_stage')?[styles.rocketCardMenuItem,styles.rocketCardMenuItemActive] : styles.rocketCardMenuItem}>First Stage</Text>
+                        <TouchableOpacity onPress={() => setSelectedCard("first_stage")}>
+                            <Text style={(selectedCard == 'first_stage') ? [styles.rocketCardMenuItem, styles.rocketCardMenuItemActive] : styles.rocketCardMenuItem}>First Stage</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={()=>setSelectedCard("second_stage")}>
-                            <Text style={(selectedCard == 'second_stage')?[styles.rocketCardMenuItem,styles.rocketCardMenuItemActive] : styles.rocketCardMenuItem}>Second Stage</Text>
+                        <TouchableOpacity onPress={() => setSelectedCard("second_stage")}>
+                            <Text style={(selectedCard == 'second_stage') ? [styles.rocketCardMenuItem, styles.rocketCardMenuItemActive] : styles.rocketCardMenuItem}>Second Stage</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.rocketCardDetailsContent}>
-                        {(selectedCard == 'dimensions') ? <Text>dimensions</Text>: null}
-                        {(selectedCard == 'first_stage') ? <Text>first_stage</Text>: null}
-                        {(selectedCard == 'second_stage') ? <Text>second_stage</Text>: null}
+                        {(selectedCard == 'dimensions') ?  
+                                Object.keys(rocket.diameter).map((key) => {
+                                    return (typeof(rocket.diameter[key]) != 'object' ? <Text>{key.replace(/_/g, " ")} : {rocket.diameter[key].toString()} </Text> : null);
+                                })
+                            : null}
+                        {(selectedCard == 'first_stage') ? 
+                                Object.keys(rocket.first_stage).map((key) => {
+                                return (typeof(rocket.first_stage[key]) != 'object' ? <Text>{key.replace(/_/g, " ")} : {rocket.first_stage[key].toString()} </Text> : null);
+                            }): null}
+                        {(selectedCard == 'second_stage') ? 
+                                Object.keys(rocket.second_stage).map((key) => {
+                                return (typeof(rocket.second_stage[key]) != 'object' ? <Text>{key.replace(/_/g, " ")} : {rocket.second_stage[key].toString()} </Text> : null);
+                            }): null}
                     </View>
                 </View>
             </View>
@@ -63,18 +73,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomColor: 'white',
         borderBottomWidth: 3,
-        display : 'flex'
+        display: 'flex'
     },
     rocketCardMenuItem: {
         color: '#fff',
-        paddingLeft:20,  
-        paddingRight:20,  
-        height : 50,
-        display : 'flex',   alignItems: 'center',
+        paddingLeft: 20,
+        paddingRight: 20,
+        height: 50,
+        display: 'flex', alignItems: 'center',
     },
     rocketCardMenuItemActive: {
         color: '#000',
-        backgroundColor: '#fff', display : 'flex',   alignItems: 'center',
+        backgroundColor: '#fff', display: 'flex', alignItems: 'center',
     }
 
 })

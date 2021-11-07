@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         margin: 10
     },
     rocketCardListItem : {
-        margin: 20
+        margin: 20,
     },
     scroled: {
         flex: 1,

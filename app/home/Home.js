@@ -16,9 +16,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Rocket from "../rocket/Rocket";
 import Capsule from "../capsule/Capsule";
-import Engine from "../engine/Engine";
+import Core from "../Core/Core";
 import Roadster from "../roadster/Roadster";
 import DashboardTile from '../components/DashboardTile';
+import Launch from '../Launch/Launch';
 export default function Home() {
 
     return (
@@ -36,15 +37,19 @@ export default function Home() {
                         <Route path="/roadster">
                             <Roadster />
                         </Route>
-                        <Route path="/engine">
-                            <Engine />
+                        <Route path="/core">
+                            <Core />
+                        </Route>
+                        <Route  path="/launch/:launch_id"  >
+                            <Launch />
                         </Route>
                         <Route path="/">
                             <View style={styles.dashboardTileContainer}>
                                 <DashboardTile  view={'Rockets'} route={'rocket'}></DashboardTile>
-                                <DashboardTile view={'Engines'} route={'engine'}></DashboardTile>
+                                <DashboardTile view={'Cores'} route={'core'}></DashboardTile>
                                 <DashboardTile view={'Capsules'} route={'capsule'}></DashboardTile>
                                 <DashboardTile view={'Roadster'} route={'roadster'}></DashboardTile>
+                                <DashboardTile view={'Launch'} route={'launch'}></DashboardTile>
                             </View>
                         </Route>
                     </Switch>
@@ -77,7 +82,8 @@ const styles = StyleSheet.create({
     },
     dashboardTileContainer:{
         flex : 1,
-        flexDirection : "row", flexWrap : 'wrap'
+        flexDirection : "row", 
+        flexWrap : 'wrap'
 
     },
 

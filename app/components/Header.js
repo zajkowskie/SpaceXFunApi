@@ -14,7 +14,7 @@ export default function Header() {
             <View style={styles.menu}>
                 <Link to="/"> <Text style={styles.menuItem}>Home</Text></Link>
                 <Link to="/rocket"> <Text style={styles.menuItem}>Rocket</Text></Link>
-                <Link to="/engine"> <Text style={styles.menuItem}>Engine</Text></Link>
+                <Link to="/core"> <Text style={styles.menuItem}>Core</Text></Link>
                 <Link to="/capsule"> <Text style={styles.menuItem}>Capsule</Text></Link>
                 <Link to="/roadster"> <Text style={styles.menuItem}>Roadster</Text></Link>
             </View>

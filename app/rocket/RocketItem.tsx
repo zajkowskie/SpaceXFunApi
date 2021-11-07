@@ -10,20 +10,18 @@ export default function RocketItem({ rocket,setSelectedRocket}) {
     return (
         <View style={[styles.rocketItem,styles.shadowProp]}>
             <TouchableOpacity onPress={handleSelect}>
-            <Image style={styles.rocketItemImage} source={{uri : rocket.flickr_images[0]}} />
-            <View style={styles.rocketInfo}>
-                <Text style={[styles.RocketItemText,styles.rocketName]}>{rocket.name}</Text>
-                <Text style={[styles.RocketItemText,styles.rocketDesc]}>{rocket.description}</Text>
-            </View>
+                <Image style={styles.rocketItemImage} source={{uri : rocket.flickr_images[0]}} />
+                <View style={styles.rocketInfo}>
+                    <Text style={[styles.RocketItemText,styles.rocketName]}>{rocket.name}</Text>
+                    <Text style={[styles.RocketItemText,styles.rocketDesc]}>{rocket.description}</Text>
+                </View>
             </TouchableOpacity>
-           
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     rocketItem: {
-        flex: "1",
         justifyContent : 'flex-start',
         alignItems: 'center',
         flexDirection : 'row',
